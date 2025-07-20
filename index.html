@@ -3,176 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thiru Dev | Verified Independent Developer</title>
+  <title>Thiru Dev | Verified Developer</title>
 
   <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Animate.css -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #0f0f0f;
+      background: #101010;
       color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
     }
+
+    /* Loader styles */
     .loader-screen {
       position: fixed;
       width: 100%;
-      height: 100%;
-      background: #0f0f0f;
+      height: 100vh;
+      background: #101010;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
       flex-direction: column;
     }
-    .loader-circle {
-      border: 8px solid #444;
-      border-top: 8px solid #00ff88;
+
+    .loader-ring {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      width: 150px;
-      height: 150px;
+      border: 8px solid rgba(0, 255, 120, 0.2);
+      border-top: 8px solid #00ff88;
       animation: spin 2s linear infinite;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .loader-circle img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
+
+    .loader-ring img {
+      width: 100px;
+      height: 100px;
       object-fit: cover;
+      border-radius: 50%;
       border: 3px solid #fff;
     }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
     #main-content {
       display: none;
+      animation: fadeIn 1.5s ease-in-out;
     }
-    h2 {
-      color: #00ffc3;
-      border-left: 4px solid #00ffc3;
-      padding-left: 10px;
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      color: #00ffb3;
+      font-size: 1.5rem;
+      border-left: 4px solid #00ffb3;
+      padding-left: 12px;
+      margin-top: 40px;
       margin-bottom: 20px;
     }
-    .badge-custom {
-      background-color: #00ffc3;
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 120, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 120, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .verified-badge {
+      display: inline-block;
+      background: #00ff88;
       color: #000;
-      margin: 0 5px;
-      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.75rem;
       padding: 5px 12px;
-      font-size: 0.8rem;
+      border-radius: 20px;
+      margin-left: 8px;
     }
-    .card-custom {
-      background: #1a1a1a;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #00ffc3;
-      transition: transform 0.3s;
-    }
-    .card-custom:hover {
-      transform: translateY(-5px);
-    }
+
     a {
-      color: #00ffc3;
+      color: #00ffb3;
       text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
+      font-size: 0.85rem;
+      margin-top: 40px;
       color: #aaa;
-      margin-top: 50px;
     }
   </style>
 </head>
 <body>
 
-<!-- Loader Screen -->
+<!-- UPI-style Loader -->
 <div class="loader-screen" id="loader">
-  <div class="loader-circle">
-    <img src="https://avatars.githubusercontent.com/u/151194150?v=4" alt="Thiru" />
+  <div class="loader-ring">
+    <img src="https://avatars.githubusercontent.com/u/151194150?v=4" alt="Thiru">
   </div>
-  <p style="margin-top: 20px;">Loading your developer portfolio...</p>
 </div>
 
 <!-- Main Portfolio -->
-<div id="main-content" class="container py-5 animate__animated animate__fadeIn">
+<div id="main-content" class="container py-5">
 
-  <div class="text-center mb-4">
-    <h1>Thiru Dev 
-      <span class="badge-custom">✔ Google Verified</span>
-      <span class="badge-custom">✔ GitHub Verified</span>
-      <span class="badge-custom">✔ Microsoft Certified</span>
-    </h1>
-    <p class="lead">Open Source | Flutter | Web | AI | Linux CLI</p>
+  <div class="text-center mb-5">
+    <h1>Thiru Dev<span class="verified-badge">✔ Verified Developer</span></h1>
+    <p class="lead">Independent Flutter | Web | AI | Open Source Developer</p>
   </div>
 
   <!-- Skills -->
-  <h2>⚙️ Skills</h2>
-  <div class="row mb-4">
-    <div class="col-md-4"><div class="card card-custom p-3">Flutter & Dart</div></div>
-    <div class="col-md-4"><div class="card card-custom p-3">HTML, CSS, JavaScript</div></div>
-    <div class="col-md-4"><div class="card card-custom p-3">Firebase, Git</div></div>
-    <div class="col-md-4"><div class="card card-custom p-3 mt-3">AI, LLMs (llama.cpp)</div></div>
-    <div class="col-md-4"><div class="card card-custom p-3 mt-3">Linux CLI Tools</div></div>
+  <div class="section-title">⚙️ Skills</div>
+  <div class="row">
+    <div class="col-md-4"><div class="glass-card">Flutter & Dart</div></div>
+    <div class="col-md-4"><div class="glass-card">HTML, CSS, JS</div></div>
+    <div class="col-md-4"><div class="glass-card">Firebase, REST APIs</div></div>
+    <div class="col-md-4"><div class="glass-card">AI & LLMs (llama.cpp)</div></div>
+    <div class="col-md-4"><div class="glass-card">Linux CLI Tools</div></div>
   </div>
 
   <!-- Projects -->
-  <h2>🚀 Projects</h2>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <div class="card card-custom p-3">
-        <h5>📘 Ansio</h5>
-        <p>Book-based Q&A Flutter WebView app using Firebase Hosting.</p>
-        <a href="#">🔗 View Project</a>
-      </div>
-    </div>
-    <div class="col-md-6 mb-3">
-      <div class="card card-custom p-3">
-        <h5>🌧️ ClimaX</h5>
-        <p>Weather app with live animations, push notifications, and clean UI.</p>
-        <a href="#">🔗 View Project</a>
-      </div>
-    </div>
-    <div class="col-md-6 mb-3">
-      <div class="card card-custom p-3">
-        <h5>🔐 Vault App</h5>
-        <p>Secure locker with PIN, fingerprint, hidden local storage.</p>
-        <a href="#">🔗 View Project</a>
-      </div>
-    </div>
-    <div class="col-md-6 mb-3">
-      <div class="card card-custom p-3">
-        <h5>🤖 Kani AI</h5>
-        <p>Offline Tamil AI girlfriend chatbot using open-source models (llama.cpp + Colab).</p>
-        <a href="#">🔗 View Project</a>
-      </div>
-    </div>
+  <div class="section-title">🚀 Projects</div>
+  <div class="glass-card">
+    <h5>📘 Ansio</h5>
+    <p>Book-back Q&A web app with Flutter WebView + Firebase Hosting.</p>
+  </div>
+  <div class="glass-card">
+    <h5>🌧️ ClimaX</h5>
+    <p>Weather app with real-time animation + push notifications.</p>
+  </div>
+  <div class="glass-card">
+    <h5>🔐 Vault App</h5>
+    <p>Offline file locker with fingerprint, PIN & hidden file system.</p>
+  </div>
+  <div class="glass-card">
+    <h5>🤖 Kani AI</h5>
+    <p>Tamil AI girlfriend chatbot using llama.cpp + Colab (fully offline).</p>
   </div>
 
   <!-- Contact -->
-  <h2>📫 Contact</h2>
-  <ul class="list-group list-group-flush mb-4">
-    <li class="list-group-item bg-dark text-light">📧 <a href="mailto:thirudevindia@gmail.com">thirudevindia@gmail.com</a></li>
-    <li class="list-group-item bg-dark text-light">🌐 <a href="https://github.com/thirudevindia" target="_blank">github.com/thirudevindia</a></li>
-    <li class="list-group-item bg-dark text-light">▶️ <a href="https://youtube.com/@thirudevindia" target="_blank">@thirudevindia</a></li>
-  </ul>
+  <div class="section-title">📫 Contact</div>
+  <div class="glass-card">
+    <p>📧 <a href="mailto:thirudevindia@gmail.com">thirudevindia@gmail.com</a></p>
+    <p>🌐 <a href="https://github.com/thirudevindia" target="_blank">github.com/thirudevindia</a></p>
+    <p>▶️ <a href="https://youtube.com/@thirudevindia" target="_blank">@thirudevindia</a></p>
+  </div>
 
   <footer>
-    &copy; 2025 Thiru Dev — Verified Independent Open Source Developer 💻🌐
+    &copy; 2025 Thiru Dev — GPay-inspired Independent Developer Portfolio 💚
   </footer>
-
 </div>
 
-<!-- JS to control loading -->
+<!-- JavaScript to control loading -->
 <script>
   window.addEventListener("load", () => {
     setTimeout(() => {
       document.getElementById("loader").style.display = "none";
       document.getElementById("main-content").style.display = "block";
-    }, 2000); // 2 seconds loader
+    }, 2000); // wait 2 seconds before showing main content
   });
 </script>
 </body>
