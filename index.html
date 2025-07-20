@@ -1,138 +1,179 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thiru Dev | Open Source Developer</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Thiru Dev | Verified Independent Developer</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Animate.css -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
-  <!-- AOS Animation -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
   <style>
     body {
-      background: #0e0e0e;
-      color: #f5f5f5;
       font-family: 'Segoe UI', sans-serif;
-    }
-    .hero {
-      padding: 100px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      margin: 0;
+      background: #0f0f0f;
       color: #fff;
     }
-    .badge-verified {
-      background: #00ffc3;
-      color: #000;
-      font-size: 0.8rem;
-      margin-left: 10px;
-      border-radius: 20px;
-      padding: 4px 10px;
+    .loader-screen {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+    .loader-circle {
+      border: 8px solid #444;
+      border-top: 8px solid #00ff88;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      animation: spin 2s linear infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .loader-circle img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #main-content {
+      display: none;
     }
     h2 {
-      border-left: 5px solid #00ffc3;
+      color: #00ffc3;
+      border-left: 4px solid #00ffc3;
       padding-left: 10px;
-      margin-top: 40px;
       margin-bottom: 20px;
     }
-    .project-card {
+    .badge-custom {
+      background-color: #00ffc3;
+      color: #000;
+      margin: 0 5px;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+    }
+    .card-custom {
       background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #00ffc3;
       transition: transform 0.3s;
     }
-    .project-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px #00ffc3;
-    }
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #888;
+    .card-custom:hover {
+      transform: translateY(-5px);
     }
     a {
       color: #00ffc3;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    footer {
+      text-align: center;
+      color: #aaa;
+      margin-top: 50px;
     }
   </style>
 </head>
-<body data-bs-theme="dark">
+<body>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1 class="display-4 animate__animated animate__fadeInDown">Thiru Dev
-      <span class="badge-verified">✔ Verified Developer</span>
+<!-- Loader Screen -->
+<div class="loader-screen" id="loader">
+  <div class="loader-circle">
+    <img src="https://avatars.githubusercontent.com/u/151194150?v=4" alt="Thiru" />
+  </div>
+  <p style="margin-top: 20px;">Loading your developer portfolio...</p>
+</div>
+
+<!-- Main Portfolio -->
+<div id="main-content" class="container py-5 animate__animated animate__fadeIn">
+
+  <div class="text-center mb-4">
+    <h1>Thiru Dev 
+      <span class="badge-custom">✔ Google Verified</span>
+      <span class="badge-custom">✔ GitHub Verified</span>
+      <span class="badge-custom">✔ Microsoft Certified</span>
     </h1>
-    <p class="lead animate__animated animate__fadeInUp">Independent & Open Source Flutter | Web | AI Developer</p>
+    <p class="lead">Open Source | Flutter | Web | AI | Linux CLI</p>
   </div>
 
-  <div class="container">
-
-    <!-- About -->
-    <h2 data-aos="fade-right">🧠 About Me</h2>
-    <p data-aos="fade-up">
-      I'm Thiru from India 🇮🇳, an independent developer who builds fast, modern, and creative apps. I specialize in Flutter, AI, CLI tools, and open source. I believe in privacy, speed, and freedom — and I build with 💙.
-    </p>
-
-    <!-- Skills -->
-    <h2 data-aos="fade-right">⚙️ Skills</h2>
-    <ul class="list-group list-group-flush mb-4" data-aos="fade-up">
-      <li class="list-group-item bg-dark text-light">✅ Flutter & Dart</li>
-      <li class="list-group-item bg-dark text-light">✅ HTML, CSS, JavaScript</li>
-      <li class="list-group-item bg-dark text-light">✅ Firebase, Git, APIs</li>
-      <li class="list-group-item bg-dark text-light">✅ Linux CLI Tools & Cybersecurity</li>
-      <li class="list-group-item bg-dark text-light">✅ Python & AI Model Integration</li>
-    </ul>
-
-    <!-- Projects -->
-    <h2 data-aos="fade-right">🚀 Projects</h2>
-    <div class="project-card" data-aos="zoom-in">
-      <h5>📘 Ansio</h5>
-      <p>Class Q&A app built using Flutter WebView + Firebase for book-based PDF sharing.</p>
-    </div>
-    <div class="project-card" data-aos="zoom-in">
-      <h5>🌧️ ClimaX</h5>
-      <p>Weather app with animated UI and real-time push notifications.</p>
-    </div>
-    <div class="project-card" data-aos="zoom-in">
-      <h5>🔐 Vault App</h5>
-      <p>Secure local file locker with PIN/fingerprint unlock and hidden folders.</p>
-    </div>
-    <div class="project-card" data-aos="zoom-in">
-      <h5>🤖 Kani AI</h5>
-      <p>Offline Tamil AI girlfriend powered by LLMs using llama.cpp and Colab.</p>
-    </div>
-
-    <!-- Open Source -->
-    <h2 data-aos="fade-right">🌍 Open Source & Identity</h2>
-    <p data-aos="fade-up">
-      I'm a contributor to multiple open-source ideas. All my tools and apps respect user freedom.  
-      I'm listed under public developer platforms like GitHub and open AI communities.
-    </p>
-
-    <!-- Contact -->
-    <h2 data-aos="fade-right">📫 Contact Me</h2>
-    <ul class="list-group list-group-flush" data-aos="fade-up">
-      <li class="list-group-item bg-dark text-light">📧 <a href="mailto:thirudevindia@gmail.com">thirudevindia@gmail.com</a></li>
-      <li class="list-group-item bg-dark text-light">🌐 <a href="https://github.com/thirudevindia" target="_blank">github.com/thirudevindia</a></li>
-      <li class="list-group-item bg-dark text-light">▶️ <a href="https://youtube.com/@thirudevindia" target="_blank">@thirudevindia</a></li>
-    </ul>
-
-    <footer class="mt-5">
-      &copy; 2025 Thiru Dev — Open Source Independent Developer 💻🌐
-    </footer>
+  <!-- Skills -->
+  <h2>⚙️ Skills</h2>
+  <div class="row mb-4">
+    <div class="col-md-4"><div class="card card-custom p-3">Flutter & Dart</div></div>
+    <div class="col-md-4"><div class="card card-custom p-3">HTML, CSS, JavaScript</div></div>
+    <div class="col-md-4"><div class="card card-custom p-3">Firebase, Git</div></div>
+    <div class="col-md-4"><div class="card card-custom p-3 mt-3">AI, LLMs (llama.cpp)</div></div>
+    <div class="col-md-4"><div class="card card-custom p-3 mt-3">Linux CLI Tools</div></div>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init();</script>
+  <!-- Projects -->
+  <h2>🚀 Projects</h2>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <div class="card card-custom p-3">
+        <h5>📘 Ansio</h5>
+        <p>Book-based Q&A Flutter WebView app using Firebase Hosting.</p>
+        <a href="#">🔗 View Project</a>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card card-custom p-3">
+        <h5>🌧️ ClimaX</h5>
+        <p>Weather app with live animations, push notifications, and clean UI.</p>
+        <a href="#">🔗 View Project</a>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card card-custom p-3">
+        <h5>🔐 Vault App</h5>
+        <p>Secure locker with PIN, fingerprint, hidden local storage.</p>
+        <a href="#">🔗 View Project</a>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card card-custom p-3">
+        <h5>🤖 Kani AI</h5>
+        <p>Offline Tamil AI girlfriend chatbot using open-source models (llama.cpp + Colab).</p>
+        <a href="#">🔗 View Project</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <h2>📫 Contact</h2>
+  <ul class="list-group list-group-flush mb-4">
+    <li class="list-group-item bg-dark text-light">📧 <a href="mailto:thirudevindia@gmail.com">thirudevindia@gmail.com</a></li>
+    <li class="list-group-item bg-dark text-light">🌐 <a href="https://github.com/thirudevindia" target="_blank">github.com/thirudevindia</a></li>
+    <li class="list-group-item bg-dark text-light">▶️ <a href="https://youtube.com/@thirudevindia" target="_blank">@thirudevindia</a></li>
+  </ul>
+
+  <footer>
+    &copy; 2025 Thiru Dev — Verified Independent Open Source Developer 💻🌐
+  </footer>
+
+</div>
+
+<!-- JS to control loading -->
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 2000); // 2 seconds loader
+  });
+</script>
 </body>
 </html>
