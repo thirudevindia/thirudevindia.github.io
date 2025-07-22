@@ -1,101 +1,139 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thirudev - International Developer</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thirudev - Independent Flutter Developer, AI Tools Builder, Open Source Contributor">
+  <meta name="keywords" content="Thirudev, Thirumagan V, Thiru Dev, Flutter Developer, Tamil Developer, AI Chatbot Flutter App, Firebase App Developer, Open Source Developer India, Self-Taught Programmer, Node.js CLI, llama.cpp Tamil AI">
+  <meta name="author" content="Thirumagan V">
+  <title>Thirudev | Developer Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
     }
-    .loader {
+    .loader-container {
       position: fixed;
-      width: 100%;
-      height: 100%;
-      background: white;
+      width: 100vw;
+      height: 100vh;
       display: flex;
-      justify-content: center;
       align-items: center;
-      z-index: 9999;
+      justify-content: center;
       flex-direction: column;
+      background-color: white;
+      z-index: 9999;
     }
-    .loader img.profile {
-      width: 100px;
-      height: 100px;
+    .loader-img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-top: 1rem;
     }
-    .card {
-      border-radius: 1rem;
+    .loader-bar {
+      width: 200px;
+      height: 6px;
+      background: #d0f0d0;
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
     }
-    .certificate-logos img {
-      height: 50px;
-      margin: 0.5rem;
+    .loader-progress {
+      height: 100%;
+      width: 0%;
+      background-color: green;
+      animation: load 2s ease-in-out forwards;
     }
-    .badge-logo img {
-      height: 40px;
-      margin-right: 10px;
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+    .content {
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #00c853;
+      margin-top: 40px;
+    }
+    .section {
+      padding: 30px;
+    }
+    .logos img {
+      height: 30px;
+      margin: 10px;
+      opacity: 0.8;
     }
   </style>
-  <script>
-    window.onload = function () {
-      document.querySelector('.loader').style.display = 'none';
-    }
-  </script>
 </head>
 <body>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;"></div>
-    <img class="profile" src="https://i.ibb.co/3M4Z7cK/thirudev.jpg" alt="Thirudev Profile" />
-  </div>  <div class="container py-5">
-    <div class="text-center mb-4">
-      <h1 class="fw-bold">Thirudev</h1>
-      <p class="lead">International Developer | Flutter & Web | AI & Open Source Enthusiast</p>
-      <button class="btn btn-dark" onclick="window.open('resume.pdf')">📄 View My Resume</button>
-    </div><div class="row justify-content-center">
-  <div class="col-md-6 mb-4">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h3 class="card-title">About Me</h3>
-        <p>Hello! I’m <strong>Thirumagan V</strong>, 17 years old and an independent developer passionate about Flutter, cybersecurity, and building real-world tech. I’m an active member of global developer organizations including <strong>IEEE</strong>, <strong>ICE</strong>, and <strong>IFIP</strong>. I believe in free and open source contribution, and I’m on a mission to make high-quality apps and tools accessible to everyone.</p>
+  <div class="loader-container" id="loader">
+    <img src="profile.png" alt="Thirudev" class="loader-img">
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+
+  <div class="content" id="content">
+    <div class="container text-center">
+      <img src="profile.png" alt="Thirudev" class="profile-img">
+      <h1 class="mt-3">Thirudev (Thirumagan V)</h1>
+      <p class="text-muted">Independent Flutter Developer | AI Tools Builder | Open Source Contributor</p>
+
+      <div class="section text-start">
+        <h3>About Me</h3>
+        <p>Hi, I’m <strong>Thirumagan V</strong>, also known as <strong>Thirudev</strong> — a 17-year-old independent developer from India. I specialize in Flutter app development, AI tool integration, and open-source contributions. I began coding on low-end systems, learning through trial, error, and endless curiosity. Through many struggles and bugs, I’ve grown into a rising developer known for building complete apps using pure logic and creativity.</p>
+      </div>
+
+      <div class="section text-start">
+        <h3>Career Highlights</h3>
+        <ul>
+          <li>Built real-world apps with Flutter, Firebase, and Rust</li>
+          <li>Created AI Chatbot "Kani" in Tamil using local models like llama.cpp</li>
+          <li>Focus on lightweight, privacy-safe apps and system tools</li>
+          <li>Open-source projects and independent innovation</li>
+        </ul>
+      </div>
+
+      <div class="section text-start">
+        <h3>Contact & Info</h3>
+        <ul>
+          <li><strong>Full Name:</strong> Thirumagan V</li>
+          <li><strong>Email:</strong> <a href="mailto:thirudevindia@gmail.com">thirudevindia@gmail.com</a></li>
+          <li><strong>Mobile:</strong> +91 7806972039</li>
+          <li><strong>Developer Nickname:</strong> Thirudev / Thiru Dev</li>
+          <li><strong>Age:</strong> 17</li>
+        </ul>
+      </div>
+
+      <div class="section text-start logos">
+        <h3>Recognized By</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/FreeCodeCamp_logo.png" alt="FreeCodeCamp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Microsoft_logo.svg" alt="Microsoft">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
       </div>
     </div>
   </div>
 
-  <div class="col-md-6 mb-4">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h3 class="card-title">Developer Badges</h3>
-        <div class="d-flex align-items-center mb-2 badge-logo">
-          <img src="https://cdn.worldvectorlogo.com/logos/ieee.svg" alt="IEEE" /> IEEE Member
-        </div>
-        <div class="d-flex align-items-center mb-2 badge-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/en/1/1e/ICE_logo.svg" alt="ICE" /> ICE Member
-        </div>
-        <div class="d-flex align-items-center mb-2 badge-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/IFIP_logo.svg" alt="IFIP" /> IFIP Member
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card shadow-sm mb-4">
-  <div class="card-body">
-    <h3 class="card-title">My Certifications</h3>
-    <div class="certificate-logos d-flex flex-wrap">
-      <img src="https://design-style-guide.freecodecamp.org/downloads/fcc_primary_large.jpg" alt="FreeCodeCamp" />
-      <img src="https://play-lh.googleusercontent.com/Vqqlp2eEVP3B1qBj-FqaEJc4LckgugOJKqnw6_xYHRHoqpmuZHZWhkK52uvMHZszBA" alt="Programming Hub" />
-      <img src="https://1000logos.net/wp-content/uploads/2021/04/Microsoft-logo.png" alt="Microsoft" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" />
-    </div>
-  </div>
-</div>
-
-  </div>  <footer class="text-center py-4">
-    <p>&copy; 2025 Thirudev. All Rights Reserved.</p>
-  </footer>
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }, 2500);
+    };
+  </script>
 </body>
 </html>
